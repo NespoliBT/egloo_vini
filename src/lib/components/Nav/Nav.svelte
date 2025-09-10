@@ -9,7 +9,7 @@
   </ul>
 
   <div class="center">
-    <img class="logo" src="public/assets/logo.png" alt="" />
+    <img class="logo" src="assets/logo.png" alt="" />
   </div>
 
   <ul class="right">
