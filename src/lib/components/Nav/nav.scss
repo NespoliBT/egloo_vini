@@ -31,11 +31,10 @@ nav.desktop {
 }
 
 .mobileToggle {
-    display: none;
     z-index: 10;
 
     @media screen and (max-width: map.get($breakpoints, desktop)) {
-        display: block;
+        display: none;
     }
 
     position: fixed;
@@ -67,12 +66,6 @@ nav.mobile {
     background-color: $white;
     display: flex;
     align-items: center;
-
-    @media screen and (max-width: map.get($breakpoints, desktop)) {
-        &.open {
-            display: flex;
-        }
-    }
 
     .top {
         margin-top: 64px;
