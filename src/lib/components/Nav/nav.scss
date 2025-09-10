@@ -1,0 +1,25 @@
+@use "$lib/styles/standard" as *;
+@use "$lib/styles/variables" as *;
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 3rem 4rem;
+
+    background-color: $white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    .left,
+    .right {
+        display: flex;
+        gap: 48px;
+    }
+
+    .center {
+        .logo {
+            height: 60px;
+            user-select: none;
+            scale: 2.5;
+        }
+    }
+}

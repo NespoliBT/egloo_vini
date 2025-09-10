@@ -1,0 +1,66 @@
+@use "sass:map";
+@use "variables" as *;
+
+:global(html) {
+    :global(*) {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: none;
+        font-family: 'Marmelad', Arial, sans-serif;
+        line-height: 1.5;
+
+        &::selection {
+            background-color: $black;
+            color: $white;
+        }
+    }
+
+    :global(body) {
+        background-color: $white_alt;
+    }
+
+    :global(a) {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    :global(ul) {
+        :global(li) {
+            list-style: none;
+        }
+    }
+
+    :global(button) {
+        background-color: transparent;
+    }
+
+    :global(img) {
+        max-width: 100%;
+    }
+}
+
+:global(:root) {
+    font-size: 16px;
+
+    @media screen and (max-width: map.get($breakpoints, xl)) {
+        font-size: 16px;
+    }
+
+    @media screen and (max-width: map.get($breakpoints, lg)) {
+        font-size: 14px;
+    }
+
+    @media screen and (max-width: map.get($breakpoints, md)) {
+        font-size: 12px;
+    }
+
+    @media screen and (max-width: map.get($breakpoints, sm)) {
+        font-size: 8px;
+    }
+
+    @media screen and (max-width: map.get($breakpoints, xs)) {
+        font-size: 6px;
+    }
+}

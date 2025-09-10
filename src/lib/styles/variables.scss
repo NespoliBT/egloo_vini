@@ -1,0 +1,30 @@
+@use "sass:map";
+@use "mixins";
+
+$breakpoints: (
+    xs: 320px,
+    sm: 480px,
+    md: 768px,
+    lg: 1024px,
+    xl: 1200px
+);
+
+$white: #f6f6f6;
+$white_alt: #f4f3ed;
+$black: #141414;
+$grey: #404040;
+
+@font-face {
+    font-family: 'Marmelad';
+    src: url("$assets/fonts/Marmelad-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("$assets/fonts/Roboto.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "NerdFont";
+    src: url("$assets/fonts/NerdFont.ttf") format("truetype");
+}

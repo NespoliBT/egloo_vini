@@ -1,0 +1,133 @@
+@use "$lib/styles/standard";
+@use "$lib/styles/variables" as *;
+@use "$lib/styles/mixins" as *;
+
+.navEl {
+    position: relative;
+
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .icon {
+        margin-right: 16px;
+        @include icon;
+    }
+
+    .label {
+        font-family: "Roboto";
+        font-weight: 350;
+        cursor: pointer;
+        display: flex;
+    }
+
+    button {
+        font-size: 1.5rem;
+        text-transform: uppercase;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        height: 2px;
+        width: 100%;
+        background-color: black;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform .3s;
+    }
+
+    .arrow {
+        position: absolute;
+        right: -20px;
+        top: calc(50% - 6px);
+
+        &::before,
+        &::after {
+            transition: .5s;
+            content: "";
+            position: absolute;
+            top: 5px;
+            right: 0;
+            height: 2px;
+            width: 10px;
+            background-color: black;
+        }
+
+        &::before {
+            rotate: 45deg;
+            right: 0px;
+        }
+
+        &::after {
+            rotate: 315deg;
+            left: -4px;
+        }
+    }
+
+    &:hover {
+        &::before {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+    }
+
+    &.open {
+        &::before {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .arrow {
+            &::before {
+                rotate: 135deg;
+            }
+
+            &::after {
+                rotate: 225deg;
+            }
+        }
+    }
+
+    .subMenu {
+        margin-top: 16px;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 200px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        background-color: $white;
+        padding: 8px 16px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+
+        .subMenuItem {
+            position: relative;
+
+            &::before {
+                transition: transform .3s;
+                content: "";
+                position: absolute;
+                top: 0;
+                left: -7px;
+                height: 100%;
+                width: 2px;
+                background-color: black;
+                transform: scaleY(0);
+                transform-origin: center;
+            }
+
+            &:hover::before {
+                transform: scaleY(1);
+            }
+
+            .label {}
+        }
+    }
+}

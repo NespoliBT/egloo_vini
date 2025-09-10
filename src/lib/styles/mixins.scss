@@ -1,0 +1,18 @@
+@mixin icon {
+    font-family: NerdFont;
+    font-size: 1.5rem;
+    user-select: none;
+}
+
+@mixin title($size: 2rem, $weight: 500) {
+    font-family: "Marmelad", Arial, sans-serif;
+    font-size: $size;
+    font-weight: $weight;
+    margin-top: 32px;
+}
+
+@mixin container($width: 1650px, $margin: 16px) {
+    width: $width;
+    margin-inline: auto;
+    max-width: calc(100% - #{$margin * 2});
+}

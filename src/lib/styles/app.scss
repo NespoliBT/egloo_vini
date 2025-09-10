@@ -1,0 +1,8 @@
+@use "$lib/styles/standard";
+@use "$lib/styles/variables" as *;
+@use "$lib/styles/mixins" as *;
+
+.content {
+  @include container;
+  margin-top: 10rem;
+}
