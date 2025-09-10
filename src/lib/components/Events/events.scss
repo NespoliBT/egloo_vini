@@ -1,6 +1,14 @@
+@use "sass:map";
+@use "$lib/styles/variables" as *;
+@use "$lib/styles/mixins" as *;
+
 .events {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
     gap: 24px;
     margin: 64px 0;
+
+    @media screen and (max-width: map.get($breakpoints, sm)) {
+        grid-template-columns: 1fr;
+    }
 }

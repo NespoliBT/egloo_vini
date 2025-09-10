@@ -10,6 +10,10 @@
     min-height: 800px;
     height: fit-content;
 
+    @media screen and (max-width: map.get($breakpoints, desktop)) {
+        min-height: unset;
+    }
+
     &.hero {
         min-height: unset;
         flex-direction: row;
