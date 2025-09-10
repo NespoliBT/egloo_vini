@@ -1,3 +1,4 @@
+@use "sass:map";
 @use "$lib/styles/standard" as *;
 @use "$lib/styles/variables" as *;
 @use "$lib/styles/mixins" as *;
@@ -13,6 +14,11 @@
         min-height: unset;
         flex-direction: row;
         margin-bottom: 128px;
+
+        @media screen and (max-width: map.get($breakpoints, desktop)) {
+            flex-direction: column;
+            margin-bottom: 64px;
+        }
     }
 
     .image {
